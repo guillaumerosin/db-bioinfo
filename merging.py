@@ -63,8 +63,8 @@ def write_reads(reads, output_filename):
 
 
 # === MAIN ===
-filename = "C:/Users/KINGC/OneDrive/Bureau/Cours master/M1 - Quad 2/Bio-info/seq_uniq.txt"
-output_file = "C:/Users/KINGC/OneDrive/Bureau/Cours master/M1 - Quad 2/Bio-info/seq_merged.txt"
+filename = "rest2"
+output_file = "test2"
 
 start_time = time.time()
 

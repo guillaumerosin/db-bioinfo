@@ -34,8 +34,8 @@ def write_reads(reads, output_filename):
 
 
 # ===== MAIN =====
-input_file = "C:/Users/KINGC/OneDrive/Bureau/Cours master/M1 - Quad 2/Bio-info/seq_clustered.txt"  # fichier du script précédent
-output_file = "C:/Users/KINGC/OneDrive/Bureau/Cours master/M1 - Quad 2/Bio-info/seq_filtered.txt"  # fichier après suppression des reads à 1
+input_file = "testclustering"  # fichier du script précédent
+output_file = "test_more_than1read2"  # fichier après suppression des reads à 1
 
 start_time = time.time()  # début du chrono
 

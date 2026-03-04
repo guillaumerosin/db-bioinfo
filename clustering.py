@@ -69,8 +69,8 @@ def write_reads(reads, output_filename):
 
 
 # ===== MAIN =====
-filename = "C:/Users/KINGC/OneDrive/Bureau/Cours master/M1 - Quad 2/Bio-info/seq_merged.txt"  # fichier d'entrée du premier script
-output_file = "C:/Users/KINGC/OneDrive/Bureau/Cours master/M1 - Quad 2/Bio-info/seq_clustered.txt"  # sortie du clustering 97%
+filename = "test2"  # fichier d'entrée du premier script
+output_file = "testclustering"  # sortie du clustering 97%
 
 start_time = time.time()
 
