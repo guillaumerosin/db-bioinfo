@@ -19,18 +19,16 @@ class read:
 		return other.s.count(me.s) 
 	
 	def amiinter(me):
-		return [other for other in read.all if me.amiinclude(other) and me != other] 
+		return [other for other in read.all[me.index+1:] if me.amiinclude(other)] 
 	
 
 for l in open(fn):read(l)
 print(len(read.all))
-AR=list(read.all)
-AR.sort(key=lambda t:t.l)
+read.all.sort(key=lambda t:t.l)
+for i,r in enumerate(read.all):r.index=i
 CLEAN=[]
 merged=unaffected=0
-# ~ while AR:
-for r in tqdm.tqdm(AR):
-	# ~ r=AR.pop(0)
+for r in tqdm.tqdm(read.all):
 	resultat = r.amiinter()
 	if resultat:
 		# ~ print(f"todo : {len(AR)} | merging {r.index} seen {r.c} times  to {len(resultat)} reads")
@@ -42,8 +40,8 @@ for r in tqdm.tqdm(AR):
 		# ~ print(f"todo : {len(AR)} | leaving {r.index} seen {r.c} times unmerged")
 		CLEAN.append(r)
 		unaffected+=1
-print("final read count",len(CLEAN))
-print(f"{merged} merged reads, {unaffected} untouched reads")
+# ~ print("final read count",len(CLEAN))
+print(f"{merged} merged reads, {unaffected} final reads")
 
 
         
