@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import sys
+import tqdm
 # ~ from collections import Counter
 try:fn=sys.argv[1]
 except:fn=0
@@ -27,17 +28,18 @@ AR=list(read.all)
 AR.sort(key=lambda t:t.l)
 CLEAN=[]
 merged=unaffected=0
-while AR:
-	r=AR.pop(0)
+# ~ while AR:
+for r in tqdm.tqdm(AR):
+	# ~ r=AR.pop(0)
 	resultat = r.amiinter()
 	if resultat:
-		print(f"todo : {len(AR)} | merging {r.index} seen {r.c} times  to {len(resultat)} reads")
+		# ~ print(f"todo : {len(AR)} | merging {r.index} seen {r.c} times  to {len(resultat)} reads")
 		tt=sum([other.c for other in resultat])
 		for other in resultat:
 			other.c+=r.c*other.c/tt
 		merged+=1
 	else:
-		print(f"todo : {len(AR)} | leaving {r.index} seen {r.c} times unmerged")
+		# ~ print(f"todo : {len(AR)} | leaving {r.index} seen {r.c} times unmerged")
 		CLEAN.append(r)
 		unaffected+=1
 print("final read count",len(CLEAN))
