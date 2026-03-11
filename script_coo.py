@@ -60,7 +60,7 @@ for r in tqdm.tqdm(read.all):
 		# ~ print(f"todo : {len(AR)} | leaving {r.index} seen {r.c} times unmerged")
 		CLEAN.append(r)
 		unaffected+=1
-# ~ print("final read count",len(CLEAN))
+print("final read count",len(CLEAN))
 print(f"{merged} merged reads, {unaffected} final reads")
 
 
