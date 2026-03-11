@@ -62,7 +62,13 @@ for r in tqdm.tqdm(read.all):
 		unaffected+=1
 print("final read count",len(CLEAN))
 print(f"{merged} merged reads, {unaffected} final reads")
-
-
+ro=[r for r in CLEAN if r.c==1]
+print(len(ro),"reads seen atmost once only, that might need correction")
+ro=[r for r in CLEAN if r.c<=2]
+print(len(ro),"reads seen atmost 2x only, that might need correction")
+ro=[r for r in CLEAN if r.c<=3]
+print(len(ro),"reads seen atmost 3x only, that might need correction")
+ro=[r for r in CLEAN if r.c>=100]
+print(len(ro),"reads seen more than 100x")
         
    
