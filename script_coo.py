@@ -70,5 +70,5 @@ ro=[r for r in CLEAN if r.c<=3]
 print(len(ro),"reads seen atmost 3x only, that might need correction")
 ro=[r for r in CLEAN if r.c>=100]
 print(len(ro),"reads seen more than 100x")
-        
-   
+for i,t in enumerate(sorted(CLEAN,key=lambda x:x.c,reverse=True)):
+	print(f">{i+1}.{t.c}\n{t.s}")   
